@@ -1,0 +1,32 @@
+pragma solidity ^0.8.4;
+
+
+contract newContract{
+
+address payable owner;
+
+constructor ()  {
+ owner = payable(msg.sender) ;
+ 
+}
+
+ fallback() external payable{
+
+}
+
+
+function getBalance() public view returns(uint){
+    require(msg.sender == owner,'you are not the owner');
+    uint bal = address(this).balance;
+    return(bal);
+}
+
+function Transfer(uint _amt) public payable{
+require(  msg.sender == owner, 'you are not the owner');
+owner.transfer(_amt);
+}
+
+
+
+
+}
