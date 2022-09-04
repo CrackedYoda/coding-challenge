@@ -5,7 +5,7 @@
 
 // solution below
 
-function gradingStudent(grades){
+function gradingStudents(grades){
 
     var graded = grades.map((grade) => { // using map method to make new array of the answer
 
